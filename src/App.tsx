@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { store } from './store';
 import { getCurrentUser } from './store/slices/authSlice';
+import { useAppDispatch } from './hooks/redux';
 import { ThemeProvider } from './components/ThemeProvider';
 import { Toaster } from '@/components/ui/sonner';
 
@@ -63,7 +64,7 @@ import Layout from './components/Layout';
 
 // Initialize auth state from localStorage
 const AuthInitializer = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { user, isLoading } = useSelector((state: any) => state.auth);
 
   useEffect(() => {

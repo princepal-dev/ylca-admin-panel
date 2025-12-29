@@ -10,7 +10,6 @@ import {
   Quote,
   Undo,
   Redo,
-  Type,
   Heading1,
   Heading2,
   Heading3,
@@ -279,15 +278,6 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
         data-placeholder={placeholder}
       />
 
-      {/* Custom styles for placeholder */}
-      <style jsx>{`
-        [contenteditable]:empty:before {
-          content: attr(data-placeholder);
-          color: #9ca3af;
-          font-style: italic;
-          pointer-events: none;
-        }
-      `}</style>
     </div>
   );
 };
